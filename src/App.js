@@ -1,17 +1,19 @@
 import './App.css';
 import MainPage from './MainPage';
 // import Footer from './Footer';
-import { BrowserRouter, Route} from 'react-router-dom';
+import { HashRouter as Router,Switch,Route} from 'react-router-dom';
 import Dettaglio from './Dettaglio';
 
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Route exact path="/ecommerce" component={MainPage} />
-        <Route exact path="/dettaglio/:id" component={Dettaglio} />
-      </BrowserRouter>
+    <div className="App">
+      <Router basename='/'>
+        <Switch>
+        <Route path="/" exact component={MainPage} />
+        <Route path="/dettaglio/:id" exact component={Dettaglio} />
+        </Switch>
+      </Router>
       {/* <Footer /> */}
     </div>
   );
