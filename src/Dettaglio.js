@@ -9,22 +9,6 @@ import { stockData } from './data';
 import Prodotto from './Prodotto';
 import Grid from '@mui/material/Grid';
 
-
-
-
-
-//   function verifica(stock) {
-//   if (stock > 0) 
-//   {
-//   alert ("Prodotto disponibile")      
-//   }
-//   else  alert ("Prodotto non disponibile")
-// }
-
-// function scopri(stock) {
-//     alert("Quantità disponibile " + stock)
-// }
-
 export default function MediaCard(props) {
     const prodotto = stockData.find((x) => x.UPC === props.match.params.id);
 

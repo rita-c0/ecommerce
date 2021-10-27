@@ -9,7 +9,6 @@ import Footer from './Footer';
 
 
 export default function ResponsiveGrid() {
-  // STATE
 
   const [text, setText] = useState("");
 
