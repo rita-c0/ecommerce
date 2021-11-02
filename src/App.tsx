@@ -6,14 +6,12 @@ import Dettaglio from './Detail';
 
 function App() {
   return (
-    <div className="App">
       <Router basename='/'>
         <Switch>
-        <Route path="/" exact component={MainPage} />
-        <Route path="/dettaglio/:id" exact component={Dettaglio} />
+        <Route path="/dettaglio/:id" component={Dettaglio} />
+        <Route path="/" component={MainPage} />
         </Switch>
       </Router>
-    </div>
   );
 }
 
