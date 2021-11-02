@@ -14,9 +14,10 @@ type Props = {
 
 const ProductCard = (props:Props) => {
     const {id} = useParams<{id:string}>()
-    const prodotto: any = stockData.find((x) => x.UPC === id);
+    const prodotto = stockData.find((x) => x.UPC === id);
     console.log(id)
-    return (
+    return  prodotto ?
+    
       <Grid item xs={4} sm={4} md={3}>
       <Product
         upc={prodotto.UPC}
@@ -26,8 +27,7 @@ const ProductCard = (props:Props) => {
         // details={true}
       />
       </Grid>
-
-    );
-  }
+      :null;
+  };
 
   export default ProductCard;

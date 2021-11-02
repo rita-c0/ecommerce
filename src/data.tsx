@@ -433,3 +433,5 @@ export const stockData =[
       ] 
     }
   ]
+
+  export default Product;

@@ -1,6 +1,6 @@
 import './App.css';
 import MainPage from './MainPage';
-import { HashRouter as Router,Switch,Route} from 'react-router-dom';
+import { BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import Dettaglio from './Detail';
 
 
