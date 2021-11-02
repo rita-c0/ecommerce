@@ -5,6 +5,13 @@ import {ButtonGroup} from '@mui/material'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
+type Props = {
+  active: string,
+  setActive: (active:string) => void,
+  text: string,
+  setText: (text:string) => void,
+}
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -20,7 +27,7 @@ const Search = styled('div')(({ theme }) => ({
   },
 }));
 
-export default function Navbar(props) {
+const Navbar = (props:Props) => {
   return (
     <Grid container spacing={2} alignItems="center" borderBottom="solid 1.4px">
       <Grid item xs={4}>
@@ -58,7 +65,7 @@ export default function Navbar(props) {
         <Grid container spacing={2} alignItems="center" pt={1} pb={2}>
           <Grid item xs={8}>
             <Search>
-              <TextField style = {{width: "98%", height: "50px", mt:2}}
+              <TextField style = {{width: "98%", height: "50px"}}
                 value={props.text}
                 id="outlined-basic"
                 label="search"
@@ -85,4 +92,5 @@ export default function Navbar(props) {
   );
 }
 
+export default Navbar;
 

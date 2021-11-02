@@ -8,9 +8,15 @@ import Chip from '@mui/material/Chip';
 import { useHistory } from 'react-router-dom';
 import { CardActionArea } from '@mui/material';
 
+type Props = {
+  upc: string, 
+  name: string,
+  price: number,
+  availability: number,
+}
 
 
-export default function MediaCard(props) {
+const ProductCard = (props:Props) => {
   console.log(props);
   var history = useHistory();
   return (
@@ -36,3 +42,5 @@ export default function MediaCard(props) {
     </Grid>
   );
 }
+
+export default ProductCard;

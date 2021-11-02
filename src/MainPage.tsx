@@ -1,24 +1,23 @@
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
-import Prodotto from './Prodotto';
+import Prodotto from './Product';
 import {stockData} from './data';
 import Navbar from './Navbar';
 import { useState } from 'react';
 import Footer from './Footer';
+import {Product} from './data'
 
+const ResponsiveGrid: React.FC = () => {
 
+  const [text, setText] = useState<string>("");
 
-export default function ResponsiveGrid() {
+  const [active, setActive] = useState<string>("none");
 
-  const [text, setText] = useState("");
-
-  const [active, setActive] = useState("none");
-
-  const searchFilter = (prod) => {
+  const searchFilter = (prod:Product) => {
     return prod.name.toLowerCase().includes(text.toLowerCase());
   };
 
-  const activeFilter = (prod) => {
+  const activeFilter = (prod:Product) => {
     switch (active) {
       case "in":
         return prod.availability.stock > 0;
@@ -57,7 +56,7 @@ export default function ResponsiveGrid() {
                   name={e.name}
                   price={e.price.current.value}
                   availability={e.availability.stock}
-                  details={false}
+                  // details={false}
                 />
               </Grid>
             ))}
@@ -67,3 +66,5 @@ export default function ResponsiveGrid() {
     </React.Fragment>
   );
 }
+
+export default ResponsiveGrid;
