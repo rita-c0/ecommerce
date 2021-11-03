@@ -8,16 +8,15 @@ import Footer from './Footer';
 import {Product} from './data'
 
 const ResponsiveGrid: React.FC = () => {
-
   const [text, setText] = useState<string>("");
 
   const [active, setActive] = useState<string>("none");
 
-  const searchFilter = (prod:Product) => {
+  const searchFilter = (prod: Product) => {
     return prod.name.toLowerCase().includes(text.toLowerCase());
   };
 
-  const activeFilter = (prod:Product) => {
+  const activeFilter = (prod: Product) => {
     switch (active) {
       case "in":
         return prod.availability.stock > 0;
@@ -56,15 +55,14 @@ const ResponsiveGrid: React.FC = () => {
                   name={e.name}
                   price={e.price.current.value}
                   availability={e.availability.stock}
-                  // details={false}
                 />
               </Grid>
             ))}
         </Grid>
-        <Footer/>
+        <Footer />
       </Grid>
     </React.Fragment>
   );
-}
+};
 
 export default ResponsiveGrid;

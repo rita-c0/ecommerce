@@ -6,28 +6,28 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 type Props = {
-  active: string,
-  setActive: (active:string) => void,
-  text: string,
-  setText: (text:string) => void,
-}
+  active: string;
+  setActive: (active: string) => void;
+  text: string;
+  setText: (text: string) => void;
+};
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
+  "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(1),
-    width: 'auto',
+    width: "auto",
   },
 }));
 
-const Navbar = (props:Props) => {
+const Navbar = (props: Props) => {
   return (
     <Grid container spacing={2} alignItems="center" borderBottom="solid 1.4px">
       <Grid item xs={4}>
@@ -65,7 +65,8 @@ const Navbar = (props:Props) => {
         <Grid container spacing={2} alignItems="center" pt={1} pb={2}>
           <Grid item xs={8}>
             <Search>
-              <TextField style = {{width: "98%", height: "50px"}}
+              <TextField
+                style={{ width: "98%", height: "50px" }}
                 value={props.text}
                 id="outlined-basic"
                 label="search"
@@ -90,7 +91,7 @@ const Navbar = (props:Props) => {
       </Grid>
     </Grid>
   );
-}
+};
 
 export default Navbar;
 
